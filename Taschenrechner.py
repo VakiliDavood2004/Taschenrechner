@@ -13,6 +13,7 @@ class Calculator(QMainWindow):
         
         
         
+        
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setStyleSheet(qdarkstyle.load_stylesheet())
