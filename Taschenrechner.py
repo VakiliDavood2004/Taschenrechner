@@ -99,7 +99,25 @@ class Calculator(QMainWindow):
         grid.addWidget(self.button_map['0'], 4, 0, 1, 2)
 
         self.show()
-        
+        text = event.text()
+        key = event.key()
+
+        if text.isdigit() or text in ['.', '+', '-', '*', '/']:
+            self.display.setText(self.display.text() + text)
+        elif key == Qt.Key_Enter or key == Qt.Key_Return:
+            self.evaluate_expression()
+        elif key == Qt.Key_Escape:
+            self.display.setText('')
+        elif key == Qt.Key_Backspace:
+            self.display.setText(self.display.text()[:-1])
+        elif key == Qt.Key_PlusMinus:
+            self.on_click_keyboard('+/-')
+        elif key == Qt.Key_Percent:
+            self.on_click_keyboard('%')
+        elif text.lower() == 'c':
+            self.on_click_keyboard('C')
+        else:
+            super().keyPressEvent(event)
         
         
         
