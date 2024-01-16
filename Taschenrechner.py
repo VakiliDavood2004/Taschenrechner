@@ -118,7 +118,11 @@ class Calculator(QMainWindow):
             self.on_click_keyboard('C')
         else:
             super().keyPressEvent(event)
-        
+
+    def on_click(self):
+        sender = self.sender()
+        text = sender.text()
+        self.handle_button_click(text)
         
         
         
