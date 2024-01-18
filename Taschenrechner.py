@@ -123,6 +123,33 @@ class Calculator(QMainWindow):
         sender = self.sender()
         text = sender.text()
         self.handle_button_click(text)
+    def on_click_keyboard(self, text):
+        self.handle_button_click(text)
+
+    def handle_button_click(self, text):
+        current_display = self.display.text()
+
+        if text == '=':
+            self.evaluate_expression()
+        elif text == 'C':
+            self.display.setText('')
+        elif text == '+/-':
+            try:
+                if current_display and current_display != 'Fehler':
+                    if current_display[0] == '-':
+                        self.display.setText(current_display[1:])
+                    else:
+                        self.display.setText('-' + current_display)
+            except:
+                self.display.setText('Fehler')
+        elif text == '%':
+            try:
+                if current_display and current_display != 'Fehler':
+                    self.display.setText(str(eval(f'{current_display} / 100')))
+            except:
+                self.display.setText('Fehler')
+        else:
+            self.display.setText(current_display + text)
         
         
         
