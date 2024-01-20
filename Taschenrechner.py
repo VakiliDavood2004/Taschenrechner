@@ -150,6 +150,61 @@ class Calculator(QMainWindow):
                 self.display.setText('Fehler')
         else:
             self.display.setText(current_display + text)
+    def get_button_style(self, text):
+        base_style = """
+            QPushButton {
+                background-color: #44475a;
+                color: #f8f8f2;
+                border: none;
+                padding: 15px;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+            QPushButton:hover {
+                background-color: #6272a4;
+            }
+            QPushButton:pressed {
+                background-color: #bd93f9;
+                color: #282a36;
+            }
+        """
+        if text in ['/', '*', '-', '+', '=']:
+            return base_style + """
+                QPushButton {
+                    background-color: #bd93f9;
+                    color: #282a36;
+                }
+                QPushButton:hover {
+                    background-color: #ff79c6;
+                    color: #282a36;
+                }
+                QPushButton:pressed {
+                    background-color: #f8f8f2;
+                    color: #282a36;
+                }
+            """
+        elif text == 'C':
+            return base_style + """
+                QPushButton {
+                    background-color: #ff5555;
+                    color: #f8f8f2;
+                }
+                QPushButton:hover {
+                    background-color: #ff79c6;
+                }
+            """
+        elif text == '+/-' or text == '%':
+            return base_style + """
+                QPushButton {
+                    background-color: #6272a4;
+                    color: #f8f8f2;
+                }
+                QPushButton:hover {
+                    background-color: #8be9fd;
+                    color: #282a36;
+                }
+            """
+        return base_style
         
         
         
