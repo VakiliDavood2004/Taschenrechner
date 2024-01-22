@@ -8,7 +8,7 @@ class Calculator(QMainWindow):
     def __init__(self):
         super().__init__()
         self.initUI()
-        
+
     def initUI(self):
         self.setWindowTitle('Professioneller Taschenrechner')
         self.setGeometry(100, 100, 400, 550)
@@ -99,6 +99,8 @@ class Calculator(QMainWindow):
         grid.addWidget(self.button_map['0'], 4, 0, 1, 2)
 
         self.show()
+
+    def keyPressEvent(self, event):
         text = event.text()
         key = event.key()
 
@@ -123,6 +125,7 @@ class Calculator(QMainWindow):
         sender = self.sender()
         text = sender.text()
         self.handle_button_click(text)
+
     def on_click_keyboard(self, text):
         self.handle_button_click(text)
 
@@ -150,6 +153,7 @@ class Calculator(QMainWindow):
                 self.display.setText('Fehler')
         else:
             self.display.setText(current_display + text)
+
     def get_button_style(self, text):
         base_style = """
             QPushButton {
@@ -205,9 +209,16 @@ class Calculator(QMainWindow):
                 }
             """
         return base_style
-        
-        
-        
+
+    def evaluate_expression(self):
+        current_display = self.display.text()
+        try:
+            result = eval(current_display)
+            self.history.append(f'{current_display} = {result}')
+            self.display.setText(str(result))
+        except Exception as e:
+            self.display.setText('Fehler')
+
 if __name__ == '__main__':
     app = QApplication(sys.argv)
     app.setStyleSheet(qdarkstyle.load_stylesheet())
