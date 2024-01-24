@@ -1,3 +1,67 @@
+# 🇩🇪 **Erläuterungen auf Deutsch**
+
+## 💻 Professioneller Taschenrechner
+
+### 📝 Allgemeine Beschreibung  
+Dieses Projekt ist ein leistungsstarker grafischer Taschenrechner, entwickelt mit **PyQt5** und **QDarkStyle**. Die moderne Benutzeroberfläche, gut lesbare Schriftarten, eine Rechenhistorie sowie die volle Unterstützung der Tastatureingabe gehören zu seinen Hauptmerkmalen.
+
+---
+
+### 🎯 Funktionen  
+- Dunkles UI mit minimalistischem, modernem Design  
+- Interaktive Tasten mit Hover- und Klick-Effekten  
+- Anzeige der vollständigen Rechenhistorie  
+- Unterstützung für Tastatureingaben (Zahlen, Operatoren, Löschen, Berechnung ausführen)  
+- Grundrechenarten: Addition, Subtraktion, Multiplikation, Division, Prozent und Vorzeichenwechsel  
+- Responsive Design mit gut lesbarer Schriftart **Segoe UI**  
+- Grafischer Stil basierend auf **QDarkStyle** für ein professionelles Erscheinungsbild
+
+---
+
+### 🧠 Programmarchitektur  
+Das Programm verwendet die Hauptklasse `Calculator`, die von `QMainWindow` erbt, und beinhaltet folgende Komponenten:  
+- `QLineEdit` zur Anzeige der Eingabe  
+- `QTextEdit` zur Darstellung der Rechenhistorie  
+- `QGridLayout` zur Anordnung der Tasten  
+- Signalverbindungen zu Methoden für Eingabekontrolle und Operationen  
+- Unterstützung von Tastaturereignissen über `keyPressEvent`
+
+---
+
+### 📦 Installation und Ausführung
+
+#### Voraussetzungen  
+```
+pip install PyQt5 qdarkstyle
+```
+
+#### Programm starten  
+```
+python calculator.py
+```
+
+---
+
+### 🖼️ Benutzeroberfläche  
+Die Oberfläche besteht aus einem Ergebnisfeld, einem Bereich für die Rechenhistorie und einem Tastaturfeld. Die Farben sind im dunklen Stil gestaltet, um ein professionelles und angenehmes Nutzererlebnis zu bieten.
+
+---
+
+### 📁 Datei-Struktur  
+```
+calculator.py         # Hauptdatei des Rechners  
+README.md             # Projektbeschreibung auf Deutsch
+```
+
+---
+
+### 📢 Mitwirken  
+Falls du Vorschläge zur Verbesserung des Projekts hast oder gerne eine erweiterte Version (z. B. mit wissenschaftlichen Funktionen oder grafischen Darstellungen) entwickeln möchtest, würde ich mich über eine Zusammenarbeit freuen!
+
+
+---
+
+
 # 🇬🇧 **Explanation in English**
 
 ## 💻 Professional Calculator
